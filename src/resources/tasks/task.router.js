@@ -28,7 +28,7 @@ router.route('/:taskId').delete(async (req, res) => {
   const { taskId } = req.params;
   const task = await tasksService.getById(taskId);
   if (!task) {
-    res.status(404).json({ status: 'There is no task with such Id!' });
+    res.status(404).json({ status: 'Not Found' });
     return;
   }
   await tasksService.remove(taskId);

@@ -28,7 +28,7 @@ router.route('/:boardId').delete(async (req, res) => {
   const {boardId} = req.params;
   const board = await boardsService.getById(boardId)
   if (!board) {
-    res.status(404).json({ status: 'There is no board with such Id!'});
+    res.status(404).json({ status: 'Not found'});
     return;
   }
   await boardsService.remove(boardId);

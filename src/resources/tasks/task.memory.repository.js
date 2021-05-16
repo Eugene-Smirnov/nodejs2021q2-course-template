@@ -24,4 +24,23 @@ const remove = async (id) => {
   storedTasks.splice(index, 1);
 };
 
-module.exports = { getAll, getById, create, update, remove };
+const removeByBoardId = async (boardId) => {
+  for (let i = 0; i < storedTasks.length; i += 1) {
+    const task = storedTasks[i];
+    if (task.boardId === boardId) {
+      storedTasks.splice(i, 1);
+      i -= 1;
+    };
+  };
+};
+
+const unassignUser = async (userId) => {
+  for (let i = 0; i < storedTasks.length; i += 1) {
+    const task = storedTasks[i];
+    if (task.userId === userId) {
+      task.userId = null;
+    };
+  };
+};
+
+module.exports = { getAll, getById, create, update, remove, removeByBoardId, unassignUser };

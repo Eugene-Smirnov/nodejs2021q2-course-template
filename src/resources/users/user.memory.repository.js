@@ -2,6 +2,8 @@ const User = require('./user.model');
 
 const storedUsers = [];
 
+const { unassignUser } = require('../tasks/task.memory.repository');
+
 const getAll = async () => storedUsers;
 
 const getById = async (id) => storedUsers.find(user => user.id === id);
@@ -21,6 +23,7 @@ const update = async (id, userUpdateDto) => {
 
 const remove = async (id) => {
   const index = storedUsers.findIndex(user => user.id === id);
+  await unassignUser(id);
   storedUsers.splice(index, 1);
 };
 
