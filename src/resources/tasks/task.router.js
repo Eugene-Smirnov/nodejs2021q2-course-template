@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require('express').Router({ mergeParams: true });
 const tasksService = require('./task.service');
 
 router.route('/').get(async (req, res) => {
@@ -9,11 +9,16 @@ router.route('/').get(async (req, res) => {
 router.route('/:taskId').get(async (req, res) => {
   const { taskId } = req.params;
   const task = await tasksService.getById(taskId);
-  res.status(200).json(task);
+  if (!task) {
+    res.status(404).json({ status: 'Not Found' });
+  } else {
+    res.status(200).json(task);
+  }
 });
 
 router.route('/').post(async (req, res) => {
-  const task = await tasksService.create(req.body);
+  const { boardId } = req.params;
+  const task = await tasksService.create(req.body, boardId);
   res.status(201).json(task);
 });
 

@@ -6,8 +6,9 @@ const getAll = async () => storedTasks;
 
 const getById = async (id) => storedTasks.find((task) => task.id === id);
 
-const create = async (taskDto) => {
+const create = async (taskDto, boardId) => {
   const task = new Task(taskDto);
+  task.boardId = boardId;
   storedTasks.push(task);
   return task;
 };
@@ -30,8 +31,8 @@ const removeByBoardId = async (boardId) => {
     if (task.boardId === boardId) {
       storedTasks.splice(i, 1);
       i -= 1;
-    };
-  };
+    }
+  }
 };
 
 const unassignUser = async (userId) => {
@@ -39,8 +40,16 @@ const unassignUser = async (userId) => {
     const task = storedTasks[i];
     if (task.userId === userId) {
       task.userId = null;
-    };
-  };
+    }
+  }
 };
 
-module.exports = { getAll, getById, create, update, remove, removeByBoardId, unassignUser };
+module.exports = {
+  getAll,
+  getById,
+  create,
+  update,
+  remove,
+  removeByBoardId,
+  unassignUser,
+};

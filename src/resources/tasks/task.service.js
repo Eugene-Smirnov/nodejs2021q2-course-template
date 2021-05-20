@@ -4,7 +4,7 @@ const getAll = async () => tasksRepo.getAll();
 
 const getById = async (id) => tasksRepo.getById(id);
 
-const create = async (taskDto) => tasksRepo.create(taskDto);
+const create = async (taskDto, boardId) => tasksRepo.create(taskDto, boardId);
 
 const update = async (id, taskUpdateDto) => tasksRepo.update(id, taskUpdateDto);
 
