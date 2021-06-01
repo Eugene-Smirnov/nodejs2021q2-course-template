@@ -1,5 +1,7 @@
-const router = require('express').Router();
-const boardsService = require('./board.service');
+import { Router } from 'express';
+import * as boardsService from './board.service';
+
+const router = Router();
 
 router.route('/').get(async (req, res) => {
   const boards = await boardsService.getAll();
