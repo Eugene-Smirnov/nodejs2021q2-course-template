@@ -1,25 +1,40 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json",
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint/eslint-plugin"],
-  "extends": ["plugin:@typescript-eslint/recommended"],
   "root": true,
   "env": {
-    "node": true,
-    "jest": true
+    "es2020": true,
+    "jasmine": true,
+    "jest": true,
+    "node": true
   },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2021,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "settings": {
+    "noInlineConfig": true,
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "rules": {
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
-    ],
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "linebreak-style": "off",
+    "import/extensions": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "dot-notation": "off"
   }
 }
