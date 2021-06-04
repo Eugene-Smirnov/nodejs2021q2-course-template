@@ -1,6 +1,8 @@
-const { PORT } = require('./common/config');
-const app = require('./app');
+import 'dotenv';
+import { config } from './common/config';
 
-app.listen(PORT, () =>
-  console.log(`App is running on http://localhost:${PORT}`)
+import { app } from './app';
+
+app.listen(config.PORT, () =>
+  console.log(`App is running on http://localhost:${config.PORT}`)
 );

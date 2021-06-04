@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { Task } from './task.model';
 import * as tasksService from './task.service';
 
-const router = Router({ mergeParams: true });
+export const router = Router({ mergeParams: true });
 
 router.route('/').get(async (req, res) => {
   const tasks = await tasksService.getAll();
@@ -43,5 +43,3 @@ router.route('/:taskId').delete(async (req, res) => {
   await tasksService.remove(taskId);
   res.status(200).json({ status: 'Task deleted succesfully!' });
 });
-
-module.exports = router;

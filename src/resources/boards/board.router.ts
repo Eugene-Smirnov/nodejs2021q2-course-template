@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as boardsService from './board.service';
 
-const router = Router();
+export const router = Router();
 
 router.route('/').get(async (req, res) => {
   const boards = await boardsService.getAll();
@@ -40,5 +40,3 @@ router.route('/:boardId').delete(async (req, res) => {
     res.status(200).json({ status: 'Board deleted succesfully!' });
   }
 });
-
-export default { router };

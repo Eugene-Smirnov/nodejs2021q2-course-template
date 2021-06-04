@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { User } from './user.model';
 import * as usersService from './user.service';
 
-const router = Router();
+export const router = Router();
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
@@ -33,5 +33,3 @@ router.route('/:userId').delete(async (req, res) => {
   await usersService.remove(userId);
   res.status(200).json({ status: 'User deleted succesfully!' });
 });
-
-export default { router };
