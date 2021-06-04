@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const User = require('./user.model');
-const usersService = require('./user.service');
+import { Router } from 'express';
+import { User } from './user.model';
+import * as usersService from './user.service';
+
+const router = Router();
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
@@ -8,8 +10,8 @@ router.route('/').get(async (req, res) => {
   res.status(200).json(users.map(User.toResponse));
 });
 
-router.route('/:userId').get(async (req, res) =>{
-  const {userId} = req.params;
+router.route('/:userId').get(async (req, res) => {
+  const { userId } = req.params;
   const user = await usersService.getById(userId);
   res.status(200).json(User.toResponse(user));
 });
@@ -20,16 +22,16 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:userId').put(async (req, res) => {
-  const {userId} = req.params;
+  const { userId } = req.params;
   const userUpdateDto = req.body;
   const updatedUser = await usersService.update(userId, userUpdateDto);
   res.status(200).json(User.toResponse(updatedUser));
 });
 
 router.route('/:userId').delete(async (req, res) => {
-  const {userId} = req.params;
+  const { userId } = req.params;
   await usersService.remove(userId);
-  res.status(200).json({ status: 'User deleted succesfully!'})
+  res.status(200).json({ status: 'User deleted succesfully!' });
 });
 
-module.exports = router;
+export default { router };

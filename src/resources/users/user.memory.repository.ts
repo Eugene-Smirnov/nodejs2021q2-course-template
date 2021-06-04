@@ -1,30 +1,31 @@
-const User = require('./user.model');
+import { User } from './user.model';
+import { unassignUser } from '../tasks/task.memory.repository';
 
 const storedUsers = [];
 
-const { unassignUser } = require('../tasks/task.memory.repository');
+export const getAll = async (): Promise<User[]> => storedUsers;
 
-const getAll = async () => storedUsers;
+export const getById = async (id: string): Promise<User> =>
+  storedUsers.find((user) => user.id === id);
 
-const getById = async (id) => storedUsers.find(user => user.id === id);
-
-const create = async (userDto) => {
+export const create = async (userDto: User): Promise<User> => {
   const user = new User(userDto);
   storedUsers.push(user);
   return user;
 };
 
-const update = async (id, userUpdateDto) => {
+export const update = async (
+  id: string,
+  userUpdateDto: User
+): Promise<User> => {
   const user = await getById(id);
-  const updatedUser = new User({...user, ...userUpdateDto });
+  const updatedUser = new User({ ...user, ...userUpdateDto });
   Object.assign(user, userUpdateDto);
   return updatedUser;
 };
 
-const remove = async (id) => {
-  const index = storedUsers.findIndex(user => user.id === id);
+export const remove = async (id: string): Promise<void> => {
+  const index = storedUsers.findIndex((user) => user.id === id);
   await unassignUser(id);
   storedUsers.splice(index, 1);
 };
-
-module.exports = { getAll, getById, create, update, remove };

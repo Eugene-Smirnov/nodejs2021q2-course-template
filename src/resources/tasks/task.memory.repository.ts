@@ -1,31 +1,35 @@
-const Task = require('./task.model');
+import { Task } from './task.model';
 
-const storedTasks = [];
+const storedTasks: Task[] = [];
 
-const getAll = async () => storedTasks;
+export const getAll = async (): Promise<Task[]> => storedTasks;
 
-const getById = async (id) => storedTasks.find((task) => task.id === id);
+export const getById = async (id: string): Promise<Task> =>
+  storedTasks.find((task) => task.id === id);
 
-const create = async (taskDto, boardId) => {
+export const create = async (taskDto: Task, boardId: string): Promise<Task> => {
   const task = new Task(taskDto);
   task.boardId = boardId;
   storedTasks.push(task);
   return task;
 };
 
-const update = async (id, taskUpdateDto) => {
+export const update = async (
+  id: string,
+  taskUpdateDto: Task
+): Promise<Task> => {
   const task = await getById(id);
   const updatedTask = new Task({ ...task, ...taskUpdateDto });
   Object.assign(task, taskUpdateDto);
   return updatedTask;
 };
 
-const remove = async (id) => {
+export const remove = async (id: string): Promise<void> => {
   const index = storedTasks.findIndex((task) => task.id === id);
   storedTasks.splice(index, 1);
 };
 
-const removeByBoardId = async (boardId) => {
+export const removeByBoardId = async (boardId: string): Promise<void> => {
   for (let i = 0; i < storedTasks.length; i += 1) {
     const task = storedTasks[i];
     if (task.boardId === boardId) {
@@ -35,21 +39,11 @@ const removeByBoardId = async (boardId) => {
   }
 };
 
-const unassignUser = async (userId) => {
+export const unassignUser = async (userId: string): Promise<void> => {
   for (let i = 0; i < storedTasks.length; i += 1) {
     const task = storedTasks[i];
     if (task.userId === userId) {
       task.userId = null;
     }
   }
-};
-
-module.exports = {
-  getAll,
-  getById,
-  create,
-  update,
-  remove,
-  removeByBoardId,
-  unassignUser,
 };

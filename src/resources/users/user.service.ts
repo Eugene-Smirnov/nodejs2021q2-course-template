@@ -1,13 +1,15 @@
-const usersRepo = require('./user.memory.repository');
+import * as usersRepo from './user.memory.repository';
+import { User } from './user.model';
 
-const getAll = async () => usersRepo.getAll();
+export const getAll = async (): Promise<User[]> => usersRepo.getAll();
 
-const getById = async (id) => usersRepo.getById(id);
+export const getById = async (id: string): Promise<User> =>
+  usersRepo.getById(id);
 
-const create = async (userDto) => usersRepo.create(userDto);
+export const create = async (userDto: User): Promise<User> =>
+  usersRepo.create(userDto);
 
-const update = async (id, userUpdateDto) => usersRepo.update(id, userUpdateDto);
+export const update = async (id: string, userUpdateDto: User): Promise<User> =>
+  usersRepo.update(id, userUpdateDto);
 
-const remove = async (id) => usersRepo.remove(id);
-
-module.exports = { getAll, getById, create, update, remove };
+export const remove = async (id: string): Promise<void> => usersRepo.remove(id);

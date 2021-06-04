@@ -1,5 +1,8 @@
-const router = require('express').Router({ mergeParams: true });
-const tasksService = require('./task.service');
+import { Router } from 'express';
+import { Task } from './task.model';
+import * as tasksService from './task.service';
+
+const router = Router({ mergeParams: true });
 
 router.route('/').get(async (req, res) => {
   const tasks = await tasksService.getAll();
@@ -17,7 +20,8 @@ router.route('/:taskId').get(async (req, res) => {
 });
 
 router.route('/').post(async (req, res) => {
-  const { boardId } = req.params;
+  const { boardId } = req.params as Task;
+
   const task = await tasksService.create(req.body, boardId);
   res.status(201).json(task);
 });

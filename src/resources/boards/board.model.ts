@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-class Board {
+export class Board {
   public id: string;
 
   public title: string;
@@ -13,5 +13,3 @@ class Board {
     this.columns = columns;
   }
 }
-
-export default Board;
