@@ -1,11 +1,11 @@
 import { User } from './user.model';
 import { unassignUser } from '../tasks/task.memory.repository';
 
-const storedUsers = [];
+const storedUsers: User[] = [];
 
 export const getAll = async (): Promise<User[]> => storedUsers;
 
-export const getById = async (id: string): Promise<User> =>
+export const getById = async (id: string): Promise<User | undefined> =>
   storedUsers.find((user) => user.id === id);
 
 export const create = async (userDto: User): Promise<User> => {

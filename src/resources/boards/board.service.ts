@@ -3,7 +3,7 @@ import { Board } from './board.model';
 
 export const getAll = async (): Promise<Board[]> => boardsRepo.getAll();
 
-export const getById = async (id: string): Promise<Board> =>
+export const getById = async (id: string): Promise<Board | undefined> =>
   boardsRepo.getById(id);
 
 export const create = async (boardDto: Board): Promise<Board> =>

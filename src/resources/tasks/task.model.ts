@@ -5,15 +5,15 @@ export class Task {
 
   title: string;
 
-  order: number;
+  order: number | null;
 
   description: string;
 
-  userId: string;
+  userId: string | null;
 
-  boardId: string;
+  boardId: string | null;
 
-  columnId: string;
+  columnId: string | null;
 
   constructor({
     id = v4(),
@@ -23,7 +23,7 @@ export class Task {
     userId = null,
     boardId = null,
     columnId = null,
-  } = {}) {
+  }: Partial<Task> = {}) {
     this.id = id;
     this.title = title;
     this.order = order;

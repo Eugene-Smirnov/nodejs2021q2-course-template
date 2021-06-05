@@ -4,7 +4,7 @@ import * as tasksService from './task.service';
 
 export const router = Router({ mergeParams: true });
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (_req, res) => {
   const tasks = await tasksService.getAll();
   res.status(200).json(tasks);
 });
@@ -21,6 +21,9 @@ router.route('/:taskId').get(async (req, res) => {
 
 router.route('/').post(async (req, res) => {
   const { boardId } = req.params as Task;
+
+  // we didn't handle cases of trying creating tasks without board
+  if (!boardId) return;
 
   const task = await tasksService.create(req.body, boardId);
   res.status(201).json(task);

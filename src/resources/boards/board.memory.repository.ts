@@ -1,12 +1,12 @@
 import { Board } from './board.model';
 import { removeByBoardId as removeBoardTasks } from '../tasks/task.memory.repository';
 
-const storedBoards = [];
+const storedBoards: Board[] = [];
 
 export const getAll = async (): Promise<Board[]> => storedBoards as Board[];
 
-export const getById = async (id: string): Promise<Board> =>
-  storedBoards.find((board) => board.id === id);
+export const getById = async (id: string): Promise<Board | undefined> =>
+  Promise.resolve(storedBoards.find((board: Board) => board.id === id));
 
 export const create = async (boardDto: Board): Promise<Board> => {
   const board = new Board(boardDto);

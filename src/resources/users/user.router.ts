@@ -4,7 +4,7 @@ import * as usersService from './user.service';
 
 export const router = Router();
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (_req, res) => {
   const users = await usersService.getAll();
   // map user fields to exclude secret fields like "password"
   res.status(200).json(users.map(User.toResponse));
@@ -13,7 +13,9 @@ router.route('/').get(async (req, res) => {
 router.route('/:userId').get(async (req, res) => {
   const { userId } = req.params;
   const user = await usersService.getById(userId);
-  res.status(200).json(User.toResponse(user));
+  if (!user)
+    res.status(404).json({ status: `User with id:${userId} not found` });
+  else res.status(200).json(User.toResponse(user));
 });
 
 router.route('/').post(async (req, res) => {

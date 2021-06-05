@@ -1,4 +1,3 @@
-import 'dotenv';
 import { config } from './common/config';
 
 import { app } from './app';

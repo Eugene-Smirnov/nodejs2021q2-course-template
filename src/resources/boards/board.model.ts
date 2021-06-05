@@ -5,9 +5,17 @@ export class Board {
 
   public title: string;
 
-  public columns: Set<string>;
+  public columns: Set<{ title: string; order: number }>;
 
-  constructor({ id = v4(), title = 'BOARD', columns = new Set(['']) } = {}) {
+  constructor({
+    id = v4(),
+    title = 'BOARD',
+    columns = new Set(),
+  }: {
+    id?: string;
+    title?: string;
+    columns?: Set<{ title: string; order: number }>;
+  } = {}) {
     this.id = id;
     this.title = title;
     this.columns = columns;

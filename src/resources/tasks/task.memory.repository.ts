@@ -4,8 +4,8 @@ const storedTasks: Task[] = [];
 
 export const getAll = async (): Promise<Task[]> => storedTasks;
 
-export const getById = async (id: string): Promise<Task> =>
-  storedTasks.find((task) => task.id === id);
+export const getById = async (id: string): Promise<Task | undefined> =>
+  storedTasks.find((task: Task) => task.id === id);
 
 export const create = async (taskDto: Task, boardId: string): Promise<Task> => {
   const task = new Task(taskDto);
@@ -17,11 +17,10 @@ export const create = async (taskDto: Task, boardId: string): Promise<Task> => {
 export const update = async (
   id: string,
   taskUpdateDto: Task
-): Promise<Task> => {
+): Promise<Task | undefined> => {
   const task = await getById(id);
-  const updatedTask = new Task({ ...task, ...taskUpdateDto });
   Object.assign(task, taskUpdateDto);
-  return updatedTask;
+  return task;
 };
 
 export const remove = async (id: string): Promise<void> => {
@@ -32,6 +31,7 @@ export const remove = async (id: string): Promise<void> => {
 export const removeByBoardId = async (boardId: string): Promise<void> => {
   for (let i = 0; i < storedTasks.length; i += 1) {
     const task = storedTasks[i];
+    if (!task) return;
     if (task.boardId === boardId) {
       storedTasks.splice(i, 1);
       i -= 1;
@@ -42,6 +42,7 @@ export const removeByBoardId = async (boardId: string): Promise<void> => {
 export const unassignUser = async (userId: string): Promise<void> => {
   for (let i = 0; i < storedTasks.length; i += 1) {
     const task = storedTasks[i];
+    if (!task) return;
     if (task.userId === userId) {
       task.userId = null;
     }
