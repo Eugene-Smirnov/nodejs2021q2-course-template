@@ -12,8 +12,9 @@ process.on('uncaughtException', (err: Error, origin: string) => {
   const content = `----
   UNCAUGHT EXCEPTION
   ----
-  Caught exception: ${JSON.stringify(err)}
-  Exception origin: ${origin}`;
+  Caught exception: ${err}
+  Exception origin: ${origin}
+  \n`;
   log(content);
   errJournalLog(content);
 });
@@ -22,8 +23,11 @@ process.on('unhandledRejection', (reason: Error, promise) => {
   const content = `----
   UNHANDLED REJECTION
   ----
-  Unhandled Rejection at: ${JSON.stringify(promise)}
-  Reason: ${JSON.stringify(reason)}`;
+  Unhandled Rejection at: ${promise}
+  Reason: ${reason}
+  \n`;
   log(content);
   errJournalLog(content);
 });
+
+Promise.reject(Error('Oops!'));
