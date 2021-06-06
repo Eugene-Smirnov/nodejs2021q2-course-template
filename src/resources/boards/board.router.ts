@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import HttpException from '../../exceptions/HttpException';
 import * as boardsService from './board.service';
 
 export const router = Router();
@@ -8,11 +9,11 @@ router.route('/').get(async (_req, res) => {
   res.status(200).json(boards);
 });
 
-router.route('/:boardId').get(async (req, res) => {
+router.route('/:boardId').get(async (req, res, next) => {
   const { boardId } = req.params;
   const board = await boardsService.getById(boardId);
   if (!board) {
-    res.status(404).json({ status: 'Not found' });
+    next(new HttpException(404, 'Not found'));
   } else {
     res.status(200).json(board);
   }
@@ -30,11 +31,11 @@ router.route('/:boardId').put(async (req, res) => {
   res.status(200).json(updatedBoard);
 });
 
-router.route('/:boardId').delete(async (req, res) => {
+router.route('/:boardId').delete(async (req, res, next) => {
   const { boardId } = req.params;
   const board = await boardsService.getById(boardId);
   if (!board) {
-    res.status(404).json({ status: 'Not found' });
+    next(new HttpException(404, 'Not found'));
   } else {
     await boardsService.remove(boardId);
     res.status(200).json({ status: 'Board deleted succesfully!' });

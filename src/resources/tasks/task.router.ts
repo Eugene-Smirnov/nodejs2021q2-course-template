@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import HttpException from '../../exceptions/HttpException';
 import { Task } from './task.model';
 import * as tasksService from './task.service';
 
@@ -9,11 +10,11 @@ router.route('/').get(async (_req, res) => {
   res.status(200).json(tasks);
 });
 
-router.route('/:taskId').get(async (req, res) => {
+router.route('/:taskId').get(async (req, res, next) => {
   const { taskId } = req.params;
   const task = await tasksService.getById(taskId);
   if (!task) {
-    res.status(404).json({ status: 'Not Found' });
+    next(new HttpException(404, 'Not found'));
   } else {
     res.status(200).json(task);
   }
@@ -36,12 +37,11 @@ router.route('/:taskId').put(async (req, res) => {
   res.status(200).json(updatedTask);
 });
 
-router.route('/:taskId').delete(async (req, res) => {
+router.route('/:taskId').delete(async (req, res, next) => {
   const { taskId } = req.params;
   const task = await tasksService.getById(taskId);
   if (!task) {
-    res.status(404).json({ status: 'Not Found' });
-    return;
+    next(new HttpException(404, 'Not found'));
   }
   await tasksService.remove(taskId);
   res.status(200).json({ status: 'Task deleted succesfully!' });

@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import HttpException from '../../exceptions/HttpException';
 import { User } from './user.model';
 import * as usersService from './user.service';
 
@@ -10,11 +11,10 @@ router.route('/').get(async (_req, res) => {
   res.status(200).json(users.map(User.toResponse));
 });
 
-router.route('/:userId').get(async (req, res) => {
+router.route('/:userId').get(async (req, res, next) => {
   const { userId } = req.params;
   const user = await usersService.getById(userId);
-  if (!user)
-    res.status(404).json({ status: `User with id:${userId} not found` });
+  if (!user) next(new HttpException(404, 'Not found'));
   else res.status(200).json(User.toResponse(user));
 });
 
