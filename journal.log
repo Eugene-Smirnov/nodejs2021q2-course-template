@@ -1,0 +1,402 @@
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 11
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/3c5ad2a0-359f-4bf2-a27e-276125d92b2e [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 3
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/a9a5b4fa-ef58-42e5-818b-29a342a14708 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    PUT: /boards/2bad334e-89aa-44a6-a3cb-ae21f710588a [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {"id":"2bad334e-89aa-44a6-a3cb-ae21f710588a","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/2bad334e-89aa-44a6-a3cb-ae21f710588a [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/2bad334e-89aa-44a6-a3cb-ae21f710588a [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/406fd613-71eb-4624-bf3a-e39edef6afe2 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/406fd613-71eb-4624-bf3a-e39edef6afe2 [404]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks [201]
+    Completed in: 2
+    Query-params: {}
+    Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"a820c16d-e190-44c6-bef7-3f8dd9170dfa","userId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"a820c16d-e190-44c6-bef7-3f8dd9170dfa","userId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"a820c16d-e190-44c6-bef7-3f8dd9170dfa","userId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"a820c16d-e190-44c6-bef7-3f8dd9170dfa","userId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"a820c16d-e190-44c6-bef7-3f8dd9170dfa","userId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/99436a8d-3190-4937-b285-8569e984ddf0 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/610f6d6c-c7d1-4f2f-b701-300a866ac437 [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/e18aea14-c823-4c3d-a0ca-d22cc2aded7a [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/102d7335-a15d-4525-a504-e8f63404bdf9 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/884dae3c-684a-4dbd-9e56-f5c3b89aabe0 [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/99436a8d-3190-4937-b285-8569e984ddf0 [404]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/610f6d6c-c7d1-4f2f-b701-300a866ac437 [404]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/e18aea14-c823-4c3d-a0ca-d22cc2aded7a [404]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/102d7335-a15d-4525-a504-e8f63404bdf9 [404]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    GET: /boards/a820c16d-e190-44c6-bef7-3f8dd9170dfa/tasks/884dae3c-684a-4dbd-9e56-f5c3b89aabe0 [404]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/3c5ad2a0-359f-4bf2-a27e-276125d92b2e [200]
+    Completed in: 3
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:25 GMT+0300 (Moscow Standard Time)
+    POST: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/25ebfc0e-cf66-4952-9ef7-f686c844b94b [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks [201]
+    Completed in: 2
+    Query-params: {}
+    Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/ac6e10d1-bece-4472-90d9-eb7e8668f43e [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    PUT: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/454dab7e-c5b6-47cc-9494-c3cd4de5f93c [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {"id":"454dab7e-c5b6-47cc-9494-c3cd4de5f93c","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"59dc8b52-4749-40ac-b4ef-4748afb7d199","columnId":null}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/454dab7e-c5b6-47cc-9494-c3cd4de5f93c [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/25ebfc0e-cf66-4952-9ef7-f686c844b94b [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/25ebfc0e-cf66-4952-9ef7-f686c844b94b [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199/tasks/25ebfc0e-cf66-4952-9ef7-f686c844b94b [404]
+    Completed in: 0
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/59dc8b52-4749-40ac-b4ef-4748afb7d199 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /users [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /users [201]
+    Completed in: 2
+    Query-params: {}
+    Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /users/f029a832-306d-4c18-b30f-cfc99d91365b [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /users/f029a832-306d-4c18-b30f-cfc99d91365b [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /users [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /users/051e14ed-405e-4efc-a071-cb8aff99816d [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /users [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    PUT: /users/5e37c0e7-1608-476e-8af4-357778549b10 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"5e37c0e7-1608-476e-8af4-357778549b10"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /users/5e37c0e7-1608-476e-8af4-357778549b10 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /users/5e37c0e7-1608-476e-8af4-357778549b10 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /users [201]
+    Completed in: 2
+    Query-params: {}
+    Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /users/4a83c0c8-a844-4256-9aa5-66061b534bfe [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /users [201]
+    Completed in: 0
+    Query-params: {}
+    Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /boards [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"39bcf624-93cc-428b-9b7d-1182dcd0c7f0","boardId":"39c6e2b9-91ea-4274-8010-b6fd4517671c"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    POST: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks [201]
+    Completed in: 1
+    Query-params: {}
+    Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"39bcf624-93cc-428b-9b7d-1182dcd0c7f0","boardId":"39c6e2b9-91ea-4274-8010-b6fd4517671c"}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /users/39bcf624-93cc-428b-9b7d-1182dcd0c7f0 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks/4a6de3a0-42ce-4e95-858e-a9a93a7ab605 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    GET: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks/4aa98235-897f-409e-afff-b2cfad76e704 [200]
+    Completed in: 1
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks/4a6de3a0-42ce-4e95-858e-a9a93a7ab605 [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c/tasks/4aa98235-897f-409e-afff-b2cfad76e704 [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
+---- Sun Jun 06 2021 18:50:26 GMT+0300 (Moscow Standard Time)
+    DELETE: /boards/39c6e2b9-91ea-4274-8010-b6fd4517671c [200]
+    Completed in: 2
+    Query-params: {}
+    Body: {}
+    
