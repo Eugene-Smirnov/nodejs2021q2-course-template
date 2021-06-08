@@ -17,6 +17,7 @@ process.on('uncaughtException', (err: Error, origin: string) => {
   \n`;
   log(content);
   errJournalLog(content);
+  process.exit(1);
 });
 
 process.on('unhandledRejection', (reason: Error, promise) => {
@@ -28,6 +29,5 @@ process.on('unhandledRejection', (reason: Error, promise) => {
   \n`;
   log(content);
   errJournalLog(content);
+  process.exit(1);
 });
-
-Promise.reject(Error('Oops!'));
