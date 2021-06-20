@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  node:
+    build: .
+    container_name: eugene-smirnov-node
+    restart: always
+    depends_on:
+      - postgres
+    networks:
+      - rss-nodecourse-net
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./src:/user/app/src
+      - ./logs:/user/app/logs
+
+  postgres:
+    build: database/
+    container_name: eugene-smirnov-postgres
+    restart: always
+    networks:
+      - rss-nodecourse-net
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      PGDATA: ${PGDATA}
+    volumes:
+      - ./database/db:/var/lib/postgresql/data
+
+networks:
+  rss-nodecourse-net:
+    driver: bridge

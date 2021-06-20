@@ -14,19 +14,31 @@
     }
   },
   "settings": {
-    "noInlineConfig": true
+    "noInlineConfig": true,
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:node/recommended",
     "airbnb-base",
+    "eslint:recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "rules": {
-    "import/extensions": "off",
     "linebreak-style": "off",
-    "node/no-unsupported-features/es-syntax": "off",
+    "import/extensions": "off",
     "no-underscore-dangle": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "dot-notation": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ]
   }
 }
