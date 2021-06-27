@@ -1,10 +1,15 @@
+import { Entity, PrimaryColumn, Column, BaseEntity } from 'typeorm';
 import { v4 } from 'uuid';
 
-export class Board {
+@Entity()
+export class Board extends BaseEntity {
+  @PrimaryColumn('uuid')
   public id: string;
 
+  @Column()
   public title: string;
 
+  @Column()
   public columns: Set<{ title: string; order: number }>;
 
   constructor({
@@ -16,6 +21,7 @@ export class Board {
     title?: string;
     columns?: Set<{ title: string; order: number }>;
   } = {}) {
+    super();
     this.id = id;
     this.title = title;
     this.columns = columns;
