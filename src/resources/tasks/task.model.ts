@@ -1,18 +1,43 @@
+import {
+  Entity,
+  PrimaryColumn,
+  Column,
+  // ManyToOne,
+  // JoinColumn,
+  // BaseEntity,
+} from 'typeorm';
 import { v4 } from 'uuid';
 
+@Entity()
 export class Task {
+  @PrimaryColumn('uuid')
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   order: number | null;
 
+  @Column()
   description: string;
 
+  @Column({
+    type: 'varchar',
+    nullable: true,
+  })
   userId: string | null;
 
+  @Column({
+    type: 'varchar',
+    nullable: true,
+  })
   boardId: string | null;
 
+  @Column({
+    type: 'varchar',
+    nullable: true,
+  })
   columnId: string | null;
 
   constructor({
